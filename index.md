@@ -5,6 +5,8 @@
 layout: home
 ---
 
-<center>![You are trembling](/assets/images/trembling.jpg)</center>
+{:refdef: style="text-align: center;"}
+![You are trembling](/assets/images/trembling.jpg)
 
-<center>Welcome. Welcome to my blog.</center>
+Welcome. Welcome to my blog.
+{: refdef}
