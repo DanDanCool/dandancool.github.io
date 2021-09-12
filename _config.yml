@@ -23,7 +23,11 @@ github_username:  DanDanCool
 
 # Build settings
 markdown: kramdown
-theme: minima
+
+minima:
+  date_format: "%b %-d, %Y"
+  skin: dark
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
