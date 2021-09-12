@@ -5,5 +5,6 @@
 layout: home
 ---
 
-Welcome. Welcome to my blog.
 ![You are trembling](/assets/images/trembling.jpg)
+
+Welcome. Welcome to my blog.
