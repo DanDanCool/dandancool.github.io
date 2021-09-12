@@ -20,7 +20,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 author:
-  name: Daniel
+  name: Daniel Sun
   email: sun.daniel@outlook.com
 
 social:
@@ -28,6 +28,8 @@ social:
 
 # Build settings
 markdown: kramdown
+
+show_excerpts: true
 
 minima:
   date_format: "%b %-d, %Y"
