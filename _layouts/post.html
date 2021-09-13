@@ -24,16 +24,16 @@ layout: default
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
       {%- endif -%}
-
-      {%- for tag in site.categories -%}
-        {%- if tag.name == post.tags or post.categories contains tag.name -%}
-          <a href="{{ site.url }}{{ site.baseurl }}{{ tag.url }}">{{ tag.name }}</a>
-        {%- endif -%}
-      {%- endfor -%}
-
-	  <p>sample text sample text</p>
 	</p>
   </header>
+
+  <p>
+  {%- for tag in site.categories -%}
+    {%- if tag.name == post.tags or post.categories contains tag.name -%}
+      <a href="{{ site.url }}{{ site.baseurl }}{{ tag.url }}">{{ tag.name }}</a>
+    {%- endif -%}
+  {%- endfor -%}
+  </p>
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
