@@ -25,9 +25,11 @@ layout: default
         {% endfor %}
       {%- endif -%}
 
-      {% for category in post.categories %}
-        <a href="/categories/#{{category|slugize}}">{{category}}</a>
-      {% endfor %}
+      {%- for tag in site.categories -%}
+        {%- if tag.name == post.tags or post.categories contains tag.name -%}
+          <a href="{{ site.url }}{{ site.baseurl }}{{ tag.url }}">{{ tag.name }}</a>
+        {%- endif -%}
+      {%- endfor -%}
 	</p>
   </header>
 
