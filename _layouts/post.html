@@ -24,16 +24,17 @@ layout: default
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
       {%- endif -%}
+
+
+    <span class="post-category">
+      {%- for category in page.categories -%}
+        <a href="{{site.baseurl}}/categories/#{{category}}">{{category}}</a>
+        {%- unless forloop.last -%}&nbsp;{%- endunless -%}
+      {%- endfor -%}
+    </span>
 	</p>
   </header>
 
-  <p>
-  {%- for tag in site.categories -%}
-    {%- if tag.name == post.tags or post.categories contains tag.name -%}
-      <a href="{{ site.url }}{{ site.baseurl }}{{ tag.url }}">{{ tag.name }}</a>
-    {%- endif -%}
-  {%- endfor -%}
-  </p>
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
