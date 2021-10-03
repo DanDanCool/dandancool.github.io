@@ -9,7 +9,7 @@ October already... Time flies in the blink of an eye... I'm going to be honest I
 slack off. Rendering ImGui has been rather painful because of all the graphics state it touches:
 
 {% highlight cpp %}
-	// Setup render state: alpha-blending enabled, no face culling, no depth testing, scissor enabled, polygon fill
+    // Setup render state: alpha-blending enabled, no face culling, no depth testing, scissor enabled, polygon fill
     glEnable(GL_BLEND);
     glBlendEquation(GL_FUNC_ADD);
     glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA, GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
@@ -20,7 +20,7 @@ slack off. Rendering ImGui has been rather painful because of all the graphics s
     glDisable(GL_PRIMITIVE_RESTART);
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
-	// since imgui touches so much graphics state it has to back everything up to avoid messing with user graphics
+    // since imgui touches so much graphics state it has to back everything up to avoid messing with user graphics
     // Backup GL state
     int last_active_texture; glGetIntegerv(GL_ACTIVE_TEXTURE, &last_active_texture);
     glActiveTexture(GL_TEXTURE0);
@@ -63,6 +63,7 @@ screenshots last week:
 
 At this point I can pretty much make a simple 2D game. All I would need to do is serialize and deserialize scenes (which
 will probably be implemented in the future), implement a scene graph, and work on some additional UI. Since that sounds
-like a lot of work I am not going to pursue the idea for now. As per the plan from last week I am going to be working on
-some basic 3D rendering and move forward to physics engine integration. I kind of want a break from programming the
-engine so I think I'll do some research into my options for physics simulations.
+like a lot of work I am not going to pursue the idea for now. As per the plan from [last week]({% post_url
+2021-09-27-physics-update %}) I am going to be working on some basic 3D rendering and move forward to physics engine
+integration. I kind of want a break from programming the engine so I think I'll do some research into my options for
+physics simulations.
