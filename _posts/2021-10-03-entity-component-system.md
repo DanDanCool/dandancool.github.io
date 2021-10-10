@@ -11,7 +11,7 @@ Component System (ECS)**. An entity in the game world might be a player, or an e
 position, model, etc. and logic to control movement, input, etc. In an ECS an entity is nothing more than a handle, made
 up of it's various components. This is preferable to having a wide class hierarchy as code can be reused more easily. To
 illustrate this point let's consider 10 different components. The amount of different "entities" that can be made from
-these components is:
+these components is:<br>
 C(10, 10) + C(10, 9) + C(10, 8) ... + C(10, 1)<br>
 It would be very difficult to implement this using a class hierarchy, so it is preferable to use an ECS for this reason
 alone. Depending on the implementation, another benefit could be increased speed. Using a data-oriented approach,
