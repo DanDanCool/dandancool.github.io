@@ -39,7 +39,7 @@ them appear different sizes (like real life).
 
 While implementing it, I saw that the GLM implementation of the perspective projection uses the standard library
 implementation of tan. Looking for some better alternatives, I looked for a hardware implementation of it. However,
-according to Anger Fog's [Instruction Tables](https://agner.org/optimize/instruction_tables.pdf), they each take roughly
+according to Agner Fog's [Instruction Tables](https://agner.org/optimize/instruction_tables.pdf), they each take roughly
 100+ cycles each. That's surprisingly slow for a hardware instruction. Doing some research, I found that a technique
 called CORDIC is used for calculating the trigonometric functions. These functions are hard to calculate since the
 trigonometric functions are transcendental functions, and the implementation prefers accuracy over speed.
