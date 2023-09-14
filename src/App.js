@@ -1,6 +1,6 @@
-import BlogPosts from './components/BlogPosts'
-import NavBar from './components/NavBar'
-import { Routes, Route, Outlet, Link } from 'react-router-dom'
+import BlogPosts from './components/BlogPosts';
+import NavBar from './components/NavBar';
+import { Routes, Route, Outlet, Link } from 'react-router-dom';
 
 function App() {
   return (
