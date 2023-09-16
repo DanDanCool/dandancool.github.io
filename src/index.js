@@ -1,16 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import { Layout, Home, About, Blog, NotFound } from './App';
 import reportWebVitals from './reportWebVitals';
-import {HashRouter} from 'react-router-dom';
+import {createHashRouter, createRoutesFromElements, RouterProvider, Route} from 'react-router-dom';
+import { BlogPost, blogLoader } from './components/BlogPosts';
+
+const router = createHashRouter(
+	createRoutesFromElements(
+	  <Route path="/" element={<Layout />} >
+		  <Route index element={<Home />} />
+		  <Route path="about" element={<About />} />
+		  <Route path="blog" element={<Blog />} />
+		  <Route path="blog/:postId" element={<BlogPost />} loader={blogLoader} />
+		  <Route path="*" element={<NotFound />} />
+	  </Route>
+	)
+);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-	<HashRouter>
-    <App />
-	</HashRouter>
+	<RouterProvider router={router} />
   </React.StrictMode>
 );
 

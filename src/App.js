@@ -1,25 +1,8 @@
-import BlogPosts from './components/BlogPosts';
+import { RecentPosts } from './components/BlogPosts';
 import NavBar from './components/NavBar';
-import { Routes, Route, Outlet, Link } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 
-function App() {
-  return (
-	<div>
-	<Routes>
-	  <Route path="/" element={<Layout />} >
-	  <Route index element={<Home />} />
-	  <Route path="about" element={<About />} />
-	  <Route path="blog" element={<Blog />} />
-	  <Route path="*" element={<NotFound />} />
-	  </Route>
-	</Routes>
-	</div>
-  );
-}
-
-export default App;
-
-function Layout() {
+export function Layout() {
 	return (
 	<div>
 	<NavBar/>
@@ -28,30 +11,30 @@ function Layout() {
 	);
 }
 
-function Home() {
+export function Home() {
 	return (
     <div className="">
       <header className="text-4xl p-5 text-center tracking-wide">
           <Link to="/blog">Recent Posts</Link>
       </header>
-	  <BlogPosts/>
+	  <RecentPosts/>
     </div>
 	);
 }
 
-function About() {
+export function About() {
 	return (
 		<div>
 		<div className="p-5 text-4xl uppercase tracking-widest first-letter:text-6xl first-letter:font-bold font-serif text-center">
 		Simplicity is elegance
 		</div>
 		<div className="p-10 text-2xl text-left">
-		<img class="pr-10 float-left object-contain h-80 w-80" src="woomy2_sq.png"/>
+		<img className="pr-10 float-left object-contain h-80 w-80" src="woomy2_sq.png"/>
 		<p className="text-2xl text-left mb-10">
 		This is my programming philosophy. Simple solutions and systems are easier to work with and reason about, improving maintainability and reducing bugs.
 		This site embraces simplicity, I definitely did not decide writing css was too much work! Regardless, I think simplicity is pretty great, don't you agree?
 		</p>
-		<img class="pl-10 float-right object-contain h-80 w-80" src="woomy4_sq.png"/>
+		<img className="pl-10 float-right object-contain h-80 w-80" src="woomy4_sq.png"/>
 		<p className="text-2xl text-left mb-10">
 		My name is Daniel, I am an engineering student at the University of Waterloo. I am looking for work! If you are interested in contacting me please reach out via
 		email (you can access that by clicking the contact button in the navigation bar). I primarily create tools for C and C++ to streamline and simplify the development experience.
@@ -82,7 +65,7 @@ function About() {
 	);
 }
 
-function Blog() {
+export function Blog() {
 	return (
 		<div>
 		blog
@@ -90,7 +73,7 @@ function Blog() {
 	);
 }
 
-function NotFound() {
+export function NotFound() {
 	return (
 		<div>
 		404 Not Found
