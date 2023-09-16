@@ -1,5 +1,6 @@
 import markdown
 import argparse
+import os.path
 from pathlib import Path
 
 def md2jsx(name):
@@ -19,7 +20,29 @@ def buildfiles(force=False):
         html = md2jsx(f"blog/{fname}.md")
         p.write_text(html)
 
+def buildhistory():
+    files = []
+    for p in Path('blog').glob('*.md'):
+        files.append((p, os.path.getmtime(p)))
+    files.sort(key=lambda pair: pair[1])
 
+    historyjsx = """
+    import { Link } from 'react-router-dom'
+    export default function get_history () {
+    const posts = ["""
+
+    for pair in reversed(files):
+        route = pair[0].stem
+        historyjsx += f"\"{route}\","
+
+    historyjsx += """];
+    return posts;
+    }
+    """
+    p = Path("src/components/BlogPosts/history.jsx")
+    p.write_text(historyjsx)
+
+buildhistory()
 parser = argparse.ArgumentParser()
 parser.add_argument('-f', action='store_true')
 args = parser.parse_args()

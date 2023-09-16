@@ -1,6 +1,24 @@
-@tailwind base
-@tailwind components
-@tailwind utilities
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	h1 {
+		@apply text-4xl;
+		@apply text-center;
+		@apply uppercase;
+		@apply tracking-widest;
+		@apply first-letter:text-6xl;
+		@apply first-letter:font-bold;
+		@apply font-serif;
+		@apply mb-10;
+	}
+	p {
+		@apply text-2xl;
+		@apply mb-10;
+		@apply text-left;
+	}
+}
 
 body {
   margin: 0;

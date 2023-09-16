@@ -1,4 +1,4 @@
-import { RecentPosts } from './components/BlogPosts';
+import { RecentPosts, HistoryPosts } from './components/BlogPosts';
 import NavBar from './components/NavBar';
 import { Outlet, Link } from 'react-router-dom';
 
@@ -14,9 +14,9 @@ export function Layout() {
 export function Home() {
 	return (
     <div className="">
-      <header className="text-4xl p-5 text-center tracking-wide">
+      <h1 className="pt-10">
           <Link to="/blog">Recent Posts</Link>
-      </header>
+      </h1>
 	  <RecentPosts/>
     </div>
 	);
@@ -25,10 +25,10 @@ export function Home() {
 export function About() {
 	return (
 		<div>
-		<div className="p-5 text-4xl uppercase tracking-widest first-letter:text-6xl first-letter:font-bold font-serif text-center">
-		Simplicity is elegance
-		</div>
 		<div className="p-10 text-2xl text-left">
+		<h1>
+		Simplicity is elegance
+		</h1>
 		<img className="pr-10 float-left object-contain h-80 w-80" src="woomy2_sq.png"/>
 		<p className="text-2xl text-left mb-10">
 		This is my programming philosophy. Simple solutions and systems are easier to work with and reason about, improving maintainability and reducing bugs.
@@ -67,16 +67,18 @@ export function About() {
 
 export function Blog() {
 	return (
-		<div>
-		blog
+		<div className="p-10">
+		<h1>History</h1>
+		<HistoryPosts />
 		</div>
 	);
 }
 
 export function NotFound() {
 	return (
-		<div>
-		404 Not Found
+		<div className="p-10">
+		<h1>Page Not Found</h1>
+		<img className="container mx-auto h-2/4 w-2/4" src="woomy3_sq.png" />
 		</div>
 	);
 }

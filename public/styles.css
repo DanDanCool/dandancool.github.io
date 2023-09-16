@@ -434,6 +434,32 @@ video {
   display: none;
 }
 
+h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+h1::first-letter {
+  font-size: 3.75rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+h1 {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  margin-bottom: 2.5rem;
+}
+
+p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -626,6 +652,11 @@ video {
   float: left;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -642,8 +673,16 @@ video {
   display: grid;
 }
 
+.h-2\/4 {
+  height: 50%;
+}
+
 .h-80 {
   height: 20rem;
+}
+
+.w-2\/4 {
+  width: 50%;
 }
 
 .w-80 {
@@ -691,10 +730,6 @@ video {
   padding: 2.5rem;
 }
 
-.p-5 {
-  padding: 1.25rem;
-}
-
 .p-52 {
   padding: 13rem;
 }
@@ -721,6 +756,10 @@ video {
   padding-right: 2.5rem;
 }
 
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -729,18 +768,9 @@ video {
   text-align: center;
 }
 
-.font-serif {
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 
 .uppercase {
@@ -751,19 +781,31 @@ video {
   letter-spacing: 0.025em;
 }
 
-.tracking-widest {
-  letter-spacing: 0.1em;
-}
-
 .underline {
   text-decoration-line: underline;
 }
 
-.first-letter\:text-6xl::first-letter {
-  font-size: 3.75rem;
-  line-height: 1;
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.first-letter\:font-bold::first-letter {
-  font-weight: 700;
+.grayscale {
+  --tw-grayscale: grayscale(100%);
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
