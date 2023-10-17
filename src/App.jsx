@@ -56,7 +56,7 @@ export function About() {
 		I adapted my preexisting code and separated them out into pure functions. This is useful as it prevents false-sharing and removes the need for synchronization. This easily allows
 		for arbitrary scaling using a thread pool. For more details click&nbsp;
 		<a href="https://github.com/DanDanCool/fuzzy" className="underline">here</a>. In my experience, writing C with stdlib can be very cumbersome. I have written a support library with
-		common data structures to rememdy this problem. It emulates generics using macros so it can be messy but I think it's better than copying and pasting around a bunch of code. Check
+		common data structures to remedy this problem. It emulates generics using macros so it can be messy but I think it's better than copying and pasting around a bunch of code. Check
 		out the library&nbsp;
 		<a href="https://github.com/DanDanCool/jollyc" className="underline">here</a>.
 		</p>
